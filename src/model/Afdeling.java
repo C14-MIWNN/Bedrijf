@@ -7,8 +7,9 @@ package model;
 public class Afdeling {
     private static final String DEFAULT_AFDELINGS_NAAM = "Onbekend";
     private static final String DEFAULT_AFDELINGS_PLAATS = "Onbekend";
-    private String afdelingsNaam;
-    private String afdelingsPlaats;
+
+    private final String afdelingsNaam;
+    private final String afdelingsPlaats;
 
     public Afdeling(String afdelingsNaam, String afdelingsPlaats) {
         this.afdelingsNaam = afdelingsNaam;
@@ -19,11 +20,8 @@ public class Afdeling {
         this(DEFAULT_AFDELINGS_NAAM, DEFAULT_AFDELINGS_PLAATS);
     }
 
-    public String getAfdelingsNaam() {
-        return afdelingsNaam;
-    }
-
-    public String getAfdelingsPlaats() {
-        return afdelingsPlaats;
+    @Override
+    public String toString() {
+        return String.format("afdeling %s te %s", afdelingsNaam, afdelingsPlaats);
     }
 }
