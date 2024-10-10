@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  * @author Vincent Velthuizen
  * Een afdeling binnen mijn bedrijf waar personen werken
@@ -21,7 +23,24 @@ public class Afdeling {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Afdeling afdeling = (Afdeling) o;
+        return Objects.equals(afdelingsNaam, afdeling.afdelingsNaam) && Objects.equals(afdelingsPlaats, afdeling.afdelingsPlaats);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(afdelingsNaam, afdelingsPlaats);
+    }
+
+    @Override
     public String toString() {
         return String.format("afdeling %s te %s", afdelingsNaam, afdelingsPlaats);
+    }
+
+    public String getAfdelingsNaam() {
+        return afdelingsNaam;
     }
 }

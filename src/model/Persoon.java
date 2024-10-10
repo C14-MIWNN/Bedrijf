@@ -43,11 +43,7 @@ public abstract class Persoon implements Comparable<Persoon> {
         return String.format("%s woont in %s en werkt op %s", this.naam, this.woonplaats, this.afdeling);
     }
 
-    public static int getAantalPersonen() {
-        return aantalPersonen;
-    }
-
-    public String getNaam() {
-        return naam;
+    public Afdeling getAfdeling() {
+        return afdeling;
     }
 }
