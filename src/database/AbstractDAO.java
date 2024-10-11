@@ -74,4 +74,8 @@ public abstract class AbstractDAO {
     protected PreparedStatement getPreparedStatement() {
         return preparedStatement;
     }
+
+    public DBaccess getdBaccess() {
+        return dBaccess;
+    }
 }

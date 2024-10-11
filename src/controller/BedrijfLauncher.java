@@ -2,6 +2,7 @@ package controller;
 
 import database.AfdelingDAO;
 import database.DBaccess;
+import database.WerknemerDAO;
 import model.*;
 
 import java.awt.image.AreaAveragingScaleFilter;
@@ -21,14 +22,12 @@ public class BedrijfLauncher {
     public static void main(String[] args) {
         DBaccess dBaccess = new DBaccess("Bedrijf", "userBedrijf", "userBedrijfPW");
         AfdelingDAO afdelingDAO = new AfdelingDAO(dBaccess);
+        WerknemerDAO werknemerDAO = new WerknemerDAO(dBaccess);
 
         dBaccess.openConnection();
-//        afdelingDAO.slaAfdelingOp(new Afdeling("HR", "Hilversum"));
 
-        ArrayList<Afdeling> afdelingen = afdelingDAO.geefAfdelingenMetPlaats("Hilversum");
-        for (Afdeling afdeling : afdelingen) {
-            System.out.println(afdeling);
-        }
+        werknemerDAO.slaWerknemerOp(new Werknemer("Vincent", "Assen", new Afdeling("IT", "Groningen"), 0));
+
         dBaccess.closeConnection();
     }
 
