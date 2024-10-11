@@ -43,4 +43,8 @@ public class Afdeling {
     public String getAfdelingsNaam() {
         return afdelingsNaam;
     }
+
+    public String getAfdelingsPlaats() {
+        return afdelingsPlaats;
+    }
 }
